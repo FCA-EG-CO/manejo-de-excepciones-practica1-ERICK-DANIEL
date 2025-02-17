@@ -1,25 +1,23 @@
 import java.util.*;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Ingresa un numero entero: ");
-
-        Verificar();
-    }
-
-    public static void Verificar() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int numero;
 
+        System.out.println("Ingresa un numero entero: ");
+        numero = input.nextInt();
+
         try {
-            numero = input.nextInt();
-            if (numero % 2 == 0) {
-                
-            } else {
-                throw new Exception("El numero ingresado es par");
-            }
+            Verificar(numero);
         } catch (Exception e) {
-            System.out.println("El numero es impar");
+            System.out.println("El numero ingresado no es par.");
+        }
+    }
+
+    public static void Verificar(int numero) throws Exception {
+        if (numero % 2 != 0) {
+            throw new Exception();
         }
     }
 }
